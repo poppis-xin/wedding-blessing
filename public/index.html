@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王涛 & 恬恬 · 婚礼祝福墙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a0a1e 0%, #2d1b3d 30%, #1a0a2e 60%, #0d0d1a 100%);
+    overflow: hidden;
+    font-family: 'Noto Serif SC', serif;
+    color: #fff;
+    position: relative;
+  }
+
+  /* 背景粒子 */
+  .particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(100vh) rotate(0deg) scale(0); }
+    10% { opacity: 1; }
+    90% { opacity: 0.8; }
+    100% { opacity: 0; transform: translateY(-10vh) rotate(720deg) scale(1); }
+  }
+
+  /* 顶部标题 */
+  .header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .header .names {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 4rem;
+    background: linear-gradient(135deg, #ff6b9d, #ffa8c5, #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+    letter-spacing: 8px;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+  }
+
+  .header .subtitle {
+    font-size: 1.2rem;
+    color: #d4a0b9;
+    margin-top: 10px;
+    letter-spacing: 6px;
+  }
+
+  .header .hearts {
+    font-size: 2rem;
+    margin-top: 15px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
+  }
+
+  /* 飘动区域 */
+  .float-area {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* 飘动的祝福卡片 */
+  .float-card {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255,107,157,0.2), rgba(255,168,197,0.1));
+    border: 1px solid rgba(255,107,157,0.35);
+    border-radius: 18px;
+    padding: 18px 22px;
+    backdrop-filter: blur(8px);
+    pointer-events: auto;
+    cursor: default;
+    opacity: 0;
+    max-width: 340px;
+    box-shadow: 0 4px 20px rgba(255,107,157,0.15);
+  }
+
+  .float-card .msg {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fce4ec;
+    margin-bottom: 8px;
+    word-break: break-all;
+  }
+
+  .float-card .author {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #d4a0b9;
+  }
+
+  .float-card .author::before {
+    content: '—— ';
+  }
+
+  /* 从右向左飘 */
+  @keyframes floatLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(100vw) rotate(3deg) scale(0.8);
+    }
+    5% {
+      opacity: 1;
+      transform: translateX(90vw) rotate(2deg) scale(1);
+    }
+    90% {
+      opacity: 0.9;
+      transform: translateX(-10vw) rotate(-1deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-30vw) rotate(-2deg) scale(0.8);
+    }
+  }
+
+  /* 从左向右飘 */
+  @keyframes floatRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-100vw) rotate(-3deg) scale(0.8);
+    }
+    5% {
+      opacity: 1;
+      transform: translateX(-90vw) rotate(-2deg) scale(1);
+    }
+    90% {
+      opacity: 0.9;
+      transform: translateX(10vw) rotate(1deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(30vw) rotate(2deg) scale(0.8);
+    }
+  }
+
+  /* 从下往上飘 */
+  @keyframes floatUpward {
+    0% {
+      opacity: 0;
+      transform: translateY(100vh) translateX(0) rotate(2deg) scale(0.8);
+    }
+    5% {
+      opacity: 1;
+      transform: translateY(85vh) translateX(10px) rotate(1deg) scale(1);
+    }
+    50% {
+      transform: translateY(40vh) translateX(-15px) rotate(-1deg) scale(1);
+    }
+    90% {
+      opacity: 0.9;
+      transform: translateY(-5vh) translateX(5px) rotate(1deg) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20vh) translateX(0) rotate(0deg) scale(0.8);
+    }
+  }
+
+  .float-left {
+    animation: floatLeft linear forwards;
+  }
+
+  .float-right {
+    animation: floatRight linear forwards;
+  }
+
+  .float-up {
+    animation: floatUpward linear forwards;
+  }
+
+  /* 新消息弹入闪光 */
+  .float-card.new-glow {
+    box-shadow: 0 0 30px rgba(255,107,157,0.5), 0 4px 20px rgba(255,107,157,0.2);
+  }
+
+  /* 底部二维码区域 */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 18px;
+    background: linear-gradient(transparent, rgba(13,13,26,0.9));
+    z-index: 10;
+  }
+
+  .footer .hint {
+    font-size: 1.1rem;
+    color: #d4a0b9;
+    letter-spacing: 3px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  .footer .count {
+    font-size: 0.9rem;
+    color: rgba(212,160,185,0.6);
+    margin-top: 6px;
+  }
+
+  /* 空状态 */
+  .empty-state {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #d4a0b9;
+    z-index: 10;
+  }
+
+  .empty-state .icon { font-size: 4rem; margin-bottom: 20px; }
+  .empty-state .text { font-size: 1.3rem; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- 背景粒子 -->
+<div class="particles" id="particles"></div>
+
+<!-- 标题 -->
+<div class="header">
+  <div class="names">王涛 & 恬恬</div>
+  <div class="subtitle">永结同心 · 百年好合</div>
+  <div class="hearts">💕</div>
+</div>
+
+<!-- 空状态 -->
+<div class="empty-state" id="empty">
+  <div class="icon">💌</div>
+  <div class="text">等待第一份祝福...</div>
+</div>
+
+<!-- 飘动区域 -->
+<div class="float-area" id="floatArea"></div>
+
+<!-- 底部 -->
+<div class="footer">
+  <div class="hint">📱 扫码写下你的祝福 ✨</div>
+  <div class="count" id="countText"></div>
+</div>
+
+<script>
+  // 粒子
+  function createParticles() {
+    const c = document.getElementById('particles');
+    const colors = ['#ff6b9d','#ffa8c5','#ff8fab','#ffd1dc','#fff0f5','#ffb6c1'];
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const s = Math.random() * 12 + 4;
+      p.style.cssText = `left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${colors[i%colors.length]};animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*15}s;`;
+      c.appendChild(p);
+    }
+  }
+  createParticles();
+
+  const floatArea = document.getElementById('floatArea');
+  const emptyEl = document.getElementById('empty');
+  const countText = document.getElementById('countText');
+
+  let allBlessings = [];
+  let floatIndex = 0;
+  let maxOnScreen = 8;
+  let queue = [];
+  let onScreen = 0;
+  let lastId = 0; // 记录最新的祝福id，用于增量拉取
+
+  // 创建飘动卡片
+  function createFloatCard(blessing, isNew) {
+    const card = document.createElement('div');
+    card.className = 'float-card new-glow';
+
+    // 随机垂直位置（避开顶部标题和底部）
+    const topMin = 15;
+    const topMax = 75;
+    const top = Math.random() * (topMax - topMin) + topMin;
+    card.style.top = top + '%';
+
+    // 随机飘动方向
+    const directions = ['float-left', 'float-right', 'float-up'];
+    const dir = directions[Math.floor(Math.random() * directions.length)];
+
+    // 随机动画时长（9-14秒，快速飘）
+    const duration = Math.random() * 5 + 9;
+    card.style.animationDuration = duration + 's';
+
+    card.innerHTML = `
+      <div class="msg">"${escapeHtml(blessing.message)}"</div>
+      <div class="author">${escapeHtml(blessing.name)}</div>
+    `;
+
+    // 动画结束后移除，释放位置
+    card.addEventListener('animationend', () => {
+      card.remove();
+      onScreen--;
+      processQueue(); // 处理队列里的下一条
+    });
+
+    floatArea.appendChild(card);
+    onScreen++;
+
+    // 触发动画（需要下一帧才能生效）
+    requestAnimationFrame(() => {
+      card.classList.add(dir);
+      card.style.opacity = '';
+    });
+
+    // 3秒后去掉闪光
+    if (isNew) {
+      setTimeout(() => card.classList.remove('new-glow'), 3000);
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // 处理队列
+  function processQueue() {
+    if (queue.length === 0 || onScreen >= maxOnScreen) return;
+    const { blessing, isNew } = queue.shift();
+    createFloatCard(blessing, isNew);
+  }
+
+  // 入队
+  function enqueue(blessing, isNew) {
+    queue.push({ blessing, isNew });
+    processQueue();
+  }
+
+  // 循环飘动已有祝福
+  function floatNext() {
+    if (allBlessings.length === 0 || onScreen >= maxOnScreen) return;
+    // 只从最近50条里循环
+    const recent = allBlessings.slice(-50);
+    const b = recent[floatIndex % recent.length];
+    createFloatCard(b, false);
+    floatIndex++;
+  }
+
+  // 首次加载：拉最近50条
+  async function loadInitial() {
+    try {
+      const res = await fetch('/api/blessings?limit=50');
+      const data = await res.json();
+      const blessings = data.blessings;
+
+      if (blessings.length === 0) {
+        emptyEl.style.display = 'block';
+        countText.textContent = '';
+        return;
+      }
+      emptyEl.style.display = 'none';
+      countText.textContent = `已收到 ${data.total} 条祝福`;
+
+      allBlessings = blessings;
+      lastId = blessings[blessings.length - 1].id;
+
+      // 前3条立即飘出
+      blessings.slice(-3).forEach((b, i) => {
+        setTimeout(() => enqueue(b, false), i * 1500);
+      });
+    } catch (e) {
+      console.error('加载失败:', e);
+    }
+  }
+
+  // 增量拉取：只拉新祝福
+  async function pollNew() {
+    try {
+      const res = await fetch(`/api/blessings?since=${lastId}`);
+      const data = await res.json();
+      const newOnes = data.blessings;
+
+      if (newOnes.length > 0) {
+        countText.textContent = `已收到 ${data.total} 条祝福`;
+        allBlessings = [...allBlessings.slice(-100), ...newOnes];
+        lastId = newOnes[newOnes.length - 1].id;
+        emptyEl.style.display = 'none';
+
+        // 新祝福排队飘出
+        newOnes.forEach((b, i) => {
+          setTimeout(() => enqueue(b, true), i * 1200);
+        });
+      }
+    } catch (e) {}
+  }
+
+  // 首次加载
+  loadInitial();
+
+  // 每3秒增量检查新祝福
+  setInterval(pollNew, 3000);
+
+  // 每6秒循环飘一条旧祝福
+  setInterval(floatNext, 6000);
+</script>
+</body>
+</html>
