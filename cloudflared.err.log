@@ -1,0 +1,158 @@
+2026-05-06T10:22:11Z INF Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
+2026-05-06T10:22:11Z INF Requesting new quick Tunnel on trycloudflare.com...
+2026-05-06T10:22:16Z INF +--------------------------------------------------------------------------------------------+
+2026-05-06T10:22:16Z INF |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
+2026-05-06T10:22:16Z INF |  https://opening-wyoming-introductory-randy.trycloudflare.com                              |
+2026-05-06T10:22:16Z INF +--------------------------------------------------------------------------------------------+
+2026-05-06T10:22:16Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp]
+2026-05-06T10:22:16Z INF Version 2026.3.0 (Checksum 59b12880b24af581cf5b1013db601c7d843b9b097e9c78aa5957c7f39f741885)
+2026-05-06T10:22:16Z INF GOOS: windows, GOVersion: go1.24.13, GoArch: amd64
+2026-05-06T10:22:16Z INF Settings: map[ha-connections:1 protocol:quic url:http://127.0.0.1:8888]
+2026-05-06T10:22:16Z INF cloudflared will not automatically update on Windows systems.
+2026-05-06T10:22:16Z INF Generated Connector ID: 11b39df7-bf03-41eb-8f66-692c058f6816
+2026-05-06T10:22:16Z INF Initial protocol quic
+2026-05-06T10:22:16Z INF ICMP proxy will use 198.18.0.1 as source for IPv4
+2026-05-06T10:22:17Z INF ICMP proxy will use fe80::ea6c:307c:7c34:a3e7 in zone 本地连接 as source for IPv6
+2026-05-06T10:22:17Z INF cloudflared does not support loading the system root certificate pool on Windows. Please use --origin-ca-pool <PATH> to specify the path to the certificate pool
+2026-05-06T10:22:17Z INF ICMP proxy will use 198.18.0.1 as source for IPv4
+2026-05-06T10:22:17Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T10:22:17Z INF ICMP proxy will use fe80::ea6c:307c:7c34:a3e7 in zone 本地连接 as source for IPv6
+2026-05-06T10:22:17Z INF Starting metrics server on 127.0.0.1:20241/metrics
+2026-05-06T10:22:18Z INF Registered tunnel connection connIndex=0 connection=e42a9c41-2c76-440c-afec-7f852ecbf367 event=0 ip=198.18.1.35 location=lax10 protocol=quic
+2026-05-06T10:30:42Z ERR  error="stream 21 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T10:30:42Z ERR Request failed error="stream 21 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:03:06Z ERR  error="stream 57 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:03:06Z ERR Request failed error="stream 57 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:04:14Z ERR  error="stream 93 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:04:14Z ERR Request failed error="stream 93 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:04:23Z ERR  error="stream 145 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:04:23Z ERR Request failed error="stream 145 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:05:16Z ERR  error="stream 357 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:05:16Z ERR Request failed error="stream 357 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:12:12Z ERR  error="stream 1285 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:12:12Z ERR Request failed error="stream 1285 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:12:37Z ERR  error="stream 1373 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:12:37Z ERR Request failed error="stream 1373 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:12:49Z ERR  error="stream 1457 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:12:49Z ERR Request failed error="stream 1457 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:28:29Z ERR  error="stream 2077 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:28:29Z ERR Request failed error="stream 2077 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T11:28:33Z ERR  error="stream 2093 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T11:28:33Z ERR Request failed error="stream 2093 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:19:24Z ERR  error="stream 9569 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:19:24Z ERR Request failed error="stream 9569 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:20:27Z ERR  error="stream 9693 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:20:27Z ERR Request failed error="stream 9693 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:38:01Z ERR  error="stream 9833 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:38:01Z ERR Request failed error="stream 9833 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:38:03Z ERR  error="stream 9861 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:38:03Z ERR Request failed error="stream 9861 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:38:04Z ERR  error="stream 9873 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:38:04Z ERR Request failed error="stream 9873 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:44:45Z ERR  error="stream 10017 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:44:45Z ERR Request failed error="stream 10017 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:44:47Z ERR  error="stream 10045 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:44:47Z ERR Request failed error="stream 10045 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:44:47Z ERR  error="stream 10049 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:44:47Z ERR Request failed error="stream 10049 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:56:37Z ERR  error="stream 10773 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:56:37Z ERR Request failed error="stream 10773 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:56:39Z ERR  error="stream 10801 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:56:39Z ERR Request failed error="stream 10801 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:57:46Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:46Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:46Z ERR failed to serve tunnel connection error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:46Z ERR Serve tunnel error error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:46Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:47Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:52Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:52Z INF Retrying connection in up to 4s connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:57:54Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.18.1.36
+2026-05-06T13:57:59Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.18.1.36
+2026-05-06T13:57:59Z INF Retrying connection in up to 8s connIndex=0 event=0 ip=198.18.1.36
+2026-05-06T13:58:02Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.18.1.35
+2026-05-06T13:58:03Z INF Registered tunnel connection connIndex=0 connection=53cbf360-efcc-4f1b-9610-5788ddbad491 event=0 ip=198.18.1.35 location=lax11 protocol=quic
+2026-05-06T13:58:44Z ERR  error="stream 85 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:58:44Z ERR Request failed error="stream 85 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:58:46Z ERR  error="stream 113 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:58:46Z ERR Request failed error="stream 113 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T13:58:48Z ERR  error="stream 117 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T13:58:48Z ERR Request failed error="stream 117 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:01:53Z ERR  error="stream 377 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:01:53Z ERR Request failed error="stream 377 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:01:54Z ERR  error="stream 405 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:01:54Z ERR Request failed error="stream 405 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:01:56Z ERR  error="stream 417 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:01:56Z ERR Request failed error="stream 417 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:08:35Z ERR  error="stream 961 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:08:35Z ERR Request failed error="stream 961 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:08:37Z ERR  error="stream 989 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:08:37Z ERR Request failed error="stream 989 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:13:45Z ERR  error="stream 1449 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:13:45Z ERR Request failed error="stream 1449 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:13:47Z ERR  error="stream 1477 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:13:47Z ERR Request failed error="stream 1477 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:17:40Z ERR  error="stream 1805 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:17:40Z ERR Request failed error="stream 1805 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:17:42Z ERR  error="stream 1829 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:17:42Z ERR Request failed error="stream 1829 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:26:26Z ERR  error="stream 2545 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:26:26Z ERR Request failed error="stream 2545 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:26:32Z ERR  error="stream 2569 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:26:32Z ERR Request failed error="stream 2569 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:26:33Z ERR  error="stream 2581 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:26:33Z ERR Request failed error="stream 2581 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:44:10Z ERR  error="stream 3049 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:44:10Z ERR Request failed error="stream 3049 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:44:12Z ERR  error="stream 3057 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:44:12Z ERR Request failed error="stream 3057 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:48:45Z ERR  error="stream 3441 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:48:45Z ERR Request failed error="stream 3441 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T14:48:46Z ERR  error="stream 3449 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T14:48:46Z ERR Request failed error="stream 3449 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:07:36Z ERR  error="stream 4969 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:07:36Z ERR Request failed error="stream 4969 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:17:04Z ERR  error="stream 5129 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:17:04Z ERR Request failed error="stream 5129 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:17:07Z ERR  error="stream 5141 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:17:07Z ERR Request failed error="stream 5141 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:22:39Z ERR  error="stream 5605 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:22:39Z ERR Request failed error="stream 5605 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:22:41Z ERR  error="stream 5613 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:22:41Z ERR Request failed error="stream 5613 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:36:41Z ERR  error="stream 6293 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:36:41Z ERR Request failed error="stream 6293 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:46:27Z ERR  error="stream 7061 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:46:27Z ERR Request failed error="stream 7061 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:46:28Z ERR  error="stream 7069 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:46:28Z ERR Request failed error="stream 7069 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:46:54Z ERR  error="stream 7117 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:46:54Z ERR Request failed error="stream 7117 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:53:45Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:53:45Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/api/blessings?since=81 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:53:46Z ERR  error="stream 7693 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:53:46Z ERR Request failed error="stream 7693 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:53:46Z ERR  error="stream 7701 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:53:46Z ERR Request failed error="stream 7701 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:55:12Z ERR  error="stream 7833 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:55:12Z ERR Request failed error="stream 7833 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T15:55:13Z ERR  error="stream 7841 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T15:55:13Z ERR Request failed error="stream 7841 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T16:05:38Z ERR  error="stream 8701 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T16:05:38Z ERR Request failed error="stream 8701 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T16:19:15Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8888: connectex: No connection could be made because the target machine actively refused it." connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T16:19:15Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp 127.0.0.1:8888: connectex: No connection could be made because the target machine actively refused it." connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/api/blessings?since=81 event=0 ip=198.18.1.35 type=http
+2026-05-06T16:33:21Z ERR  error="stream 10981 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T16:33:21Z ERR Request failed error="stream 10981 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T17:03:34Z ERR  error="stream 11605 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T17:03:34Z ERR Request failed error="stream 11605 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T17:03:36Z ERR  error="stream 11613 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T17:03:36Z ERR Request failed error="stream 11613 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T18:22:02Z ERR  error="stream 16401 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T18:22:02Z ERR Request failed error="stream 16401 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T18:32:00Z ERR  error="stream 16469 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T18:32:00Z ERR Request failed error="stream 16469 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T18:32:02Z ERR  error="stream 16477 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T18:32:02Z ERR Request failed error="stream 16477 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
+2026-05-06T18:34:38Z ERR  error="stream 16729 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:8888
+2026-05-06T18:34:38Z ERR Request failed error="stream 16729 canceled by remote with error code 0" connIndex=0 dest=https://opening-wyoming-introductory-randy.trycloudflare.com/assets/%E4%BA%A4%E6%8D%A2%E4%BD%99%E7%94%9F.mp3 event=0 ip=198.18.1.35 type=http
