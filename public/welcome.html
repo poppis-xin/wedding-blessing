@@ -3,14 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XX & XX 的线上祝福空间</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <link rel="preload" as="image" href="/assets/1.jpg" fetchpriority="high">
+  <title>王涛 & 鲁恬恬 的婚礼祝福</title>
   <style>
     /* 基础重置与防溢出 */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html,
+    body {
+      touch-action: manipulation;
+      -webkit-text-size-adjust: 100%;
+      overscroll-behavior: none;
     }
 
     body {
@@ -25,13 +33,79 @@
         radial-gradient(2px 2px at 160px 120px, rgba(216, 189, 115, 0.48), rgba(0, 0, 0, 0));
       background-size: 200px 200px;
       color: #ffffff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       /* 关键：切断一切导致诡异白边的溢出 */
       position: relative;
+    }
+
+    .photo-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background: #020806;
+    }
+
+    .photo-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(180deg, rgba(2, 8, 6, 0.08), rgba(2, 8, 6, 0.16)),
+        radial-gradient(circle at 50% 42%, rgba(216, 189, 115, 0.04), rgba(2, 8, 6, 0.08) 58%, rgba(2, 8, 6, 0.2));
+    }
+
+    .photo-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      opacity: 0;
+      transform: scale(1.035);
+      filter: brightness(1.24) saturate(1.08) contrast(1.04);
+      animation: photoFade 48s ease-in-out infinite;
+      will-change: opacity;
+    }
+
+    .photo-bg img:nth-child(1) {
+      opacity: 1;
+      animation-delay: -1.2s;
+    }
+    .photo-bg img:nth-child(2) { animation-delay: 6s; }
+    .photo-bg img:nth-child(3) { animation-delay: 12s; }
+    .photo-bg img:nth-child(4) { animation-delay: 18s; }
+    .photo-bg img:nth-child(5) { animation-delay: 24s; }
+    .photo-bg img:nth-child(6) { animation-delay: 30s; }
+    .photo-bg img:nth-child(7) { animation-delay: 36s; }
+    .photo-bg img:nth-child(8) { animation-delay: 42s; }
+
+    @media (max-width: 520px) {
+      .photo-bg img {
+        object-position: center center;
+      }
+    }
+
+    @keyframes photoFade {
+      0%,
+      3% {
+        opacity: 0;
+      }
+
+      7%,
+      20% {
+        opacity: 1;
+      }
+
+      24%,
+      100% {
+        opacity: 0;
+      }
     }
 
     /* 真正的高级环境光晕 */
@@ -41,7 +115,7 @@
       filter: blur(90px);
       /* 极度模糊，变成一团柔光 */
       z-index: 1;
-      opacity: 0.6;
+      opacity: 0.24;
       animation: breathe 8s ease-in-out infinite alternate;
     }
 
@@ -68,12 +142,43 @@
       inset: 0;
       z-index: 2;
       pointer-events: none;
-      opacity: 0.34;
+      display: none;
+      opacity: 0;
       background-image:
         url("data:image/svg+xml,%3Csvg width='760' height='420' viewBox='0 0 760 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d8bd73' stroke-width='1' stroke-opacity='.42'%3E%3Cpath d='M34 330C146 242 148 88 280 68c102-16 133 78 72 114-52 31-113 4-82-36 30-39 96-24 132 35 47 77 124 115 270 38'/%3E%3Cpath d='M85 108c58 33 92 21 132-18M547 286c61-8 91-38 116-84M185 283c46-14 71-41 83-80'/%3E%3Cpath d='M216 90c-18 3-35-3-50-18M266 205c-23 16-47 20-73 11M664 201c-17-2-31-10-41-25'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 760px 420px;
       mix-blend-mode: screen;
+    }
+
+    .page-shell {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: #020806;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.36s ease;
+    }
+
+    .page-shell iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: #020806;
+    }
+
+    body.is-shell-open .page-shell {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    body.is-shell-open .glass-card {
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(-50%, calc(-50% + 10px), 0) scale(0.98);
+      transition: opacity 0.24s ease, transform 0.24s ease;
     }
 
     @keyframes breathe {
@@ -96,26 +201,31 @@
 
     /* 极简通透玻璃卡片 */
     .glass-card {
-      position: relative;
+      position: fixed;
+      top: 50%;
+      left: 50%;
       z-index: 10;
-      width: 90%;
-      max-width: 380px;
+      width: min(78vw, 340px);
+      max-width: 340px;
       /* 限制手机端最大宽度，显得精致 */
-      padding: 40px 32px;
+      padding: 34px 26px;
       border-radius: 24px;
       text-align: center;
       overflow: hidden;
       isolation: isolate;
+      transform: translate3d(-50%, -50%, 0);
+      transform-origin: center;
+      transition: opacity 0.24s ease, transform 0.24s ease;
 
       /* 核心玻璃质感参数 */
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.01);
       /* 极低的白底 */
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: 1px solid rgba(255, 255, 255, 0.34);
       box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.42),
-        0 0 34px rgba(216, 189, 115, 0.08);
+        0 18px 34px rgba(0, 0, 0, 0.18),
+        0 0 18px rgba(216, 189, 115, 0.08);
     }
 
     .glass-card::before {
@@ -140,7 +250,7 @@
           transparent 250deg,
           transparent 360deg);
       filter: drop-shadow(0 0 8px rgba(216, 189, 115, 0.42));
-      opacity: 0.96;
+      opacity: 0.42;
       -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -158,15 +268,13 @@
       z-index: 1;
       inset: 5px;
       border-radius: 19px;
-      background:
-        linear-gradient(150deg, rgba(5, 24, 17, 0.84), rgba(2, 12, 9, 0.8)),
-        rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.035), rgba(2, 12, 9, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.14),
-        inset 0 -28px 55px rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+        inset 0 1px 1px rgba(255, 255, 255, 0.18),
+        inset 0 -18px 38px rgba(0, 0, 0, 0.04);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     .glass-card > * {
@@ -234,12 +342,14 @@
       font-weight: 600;
       margin-bottom: 8px;
       letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.56);
     }
 
     .intro {
       font-size: 13px;
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.72);
       margin-bottom: 36px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.54);
     }
 
     /* 按钮组 */
@@ -632,12 +742,23 @@
 
     @media (max-width: 420px) {
       .glass-card {
-        padding: 36px 24px;
+        width: min(76vw, 300px);
+        padding: 26px 18px;
+      }
+
+      .intro {
+        margin-bottom: 26px;
+      }
+
+      .btn-group {
+        gap: 14px;
       }
 
       .blessing-button {
         width: 100%;
         min-width: 0;
+        height: 56px;
+        padding: 14px 20px;
       }
     }
   </style>
@@ -645,14 +766,24 @@
 
 <body>
 
+  <div class="photo-bg" aria-hidden="true">
+    <img src="/assets/1.jpg" alt="" fetchpriority="high" decoding="async">
+    <img src="/assets/2.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/3.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/4.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/5.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/6.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/7.jpg" alt="" loading="lazy" decoding="async">
+    <img src="/assets/8.jpg" alt="" loading="lazy" decoding="async">
+  </div>
   <div class="vine-layer" aria-hidden="true"></div>
   <div class="glow-orb orb-emerald"></div>
   <div class="glow-orb orb-gold"></div>
 
   <div class="glass-card">
     <div class="rings-icon" aria-hidden="true"></div>
-    <h1>XX & XX<br>的线上祝福空间</h1>
-    <p class="intro">感谢各位网友的见证，留下你的足迹吧～</p>
+    <h1>王涛 & 鲁恬恬</h1>
+    <p class="intro">感谢每一位朋友送来的祝福<br>愿这些温柔的话语，陪新人走向更长久的以后</p>
 
     <div class="btn-group">
       <a href="/write.html" class="blessing-button" aria-label="送上祝福">
@@ -734,73 +865,74 @@
     </div>
   </div>
 
+  <div class="page-shell" id="pageShell" aria-hidden="true">
+    <iframe id="pageShellFrame" name="pageShellFrame" title="婚礼祝福页面切换区"></iframe>
+  </div>
+
   <!-- 背景音乐 -->
   <audio id="bgMusic" loop>
     <source src="/assets/交换余生.mp3" type="audio/mpeg">
   </audio>
 
+  <script src="/music.js"></script>
   <script>
-    // 背景音乐 - 跨页面同步
-    const bgMusic = document.getElementById('bgMusic');
+    const pageShell = document.getElementById('pageShell');
+    const pageShellFrame = document.getElementById('pageShellFrame');
+    const shellRoutes = new Set(['/','/welcome','/write','/write.html','/all-blessings','/all-blessings.html']);
 
-    function syncMusicState() {
-      const musicState = localStorage.getItem('bgMusicPlaying');
-      const musicTime = parseFloat(localStorage.getItem('bgMusicTime') || '0');
-
-      if (musicState === 'true') {
-        bgMusic.currentTime = musicTime;
-        bgMusic.play().catch(err => console.log('音乐播放需要用户交互:', err));
-      }
+    function openShell(target) {
+      if (!target) return;
+      document.body.classList.add('is-shell-open');
+      pageShell.setAttribute('aria-hidden', 'false');
+      pageShellFrame.src = target;
     }
 
-    function startMusic() {
-      bgMusic.play().then(() => {
-        localStorage.setItem('bgMusicPlaying', 'true');
-      }).catch(err => {
-        console.log('音乐播放需要用户交互:', err);
+    function clearSendingState() {
+      document.querySelectorAll('.blessing-button.is-sending').forEach(button => {
+        button.classList.remove('is-sending');
       });
     }
 
-    // 定期保存播放进度
-    setInterval(() => {
-      if (!bgMusic.paused) {
-        localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-      }
-    }, 1000);
+    function normalizeTarget(target) {
+      if (target === '/write.html') return '/write';
+      if (target === '/all-blessings.html') return '/all-blessings';
+      return target;
+    }
 
-    // 页面卸载时保存状态
-    window.addEventListener('beforeunload', () => {
-      if (!bgMusic.paused) {
-        localStorage.setItem('bgMusicPlaying', 'true');
-        localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-      }
-    });
+    function handleButtonClick(button, event) {
+      const target = normalizeTarget(button.getAttribute('href'));
+      if (!target || button.classList.contains('is-sending')) return;
 
-    // 尝试恢复音乐状态
-    syncMusicState();
+      event.preventDefault();
+      if (window.WeddingMusic) window.WeddingMusic.start();
+      button.classList.add('is-sending');
 
-    // 如果音乐未播放，等待用户交互
-    if (localStorage.getItem('bgMusicPlaying') !== 'true') {
-      document.addEventListener('click', startMusic, { once: true });
-      document.addEventListener('touchstart', startMusic, { once: true });
+      openShell(target);
+      window.setTimeout(clearSendingState, 420);
     }
 
     document.querySelectorAll('.blessing-button').forEach(button => {
-      button.addEventListener('click', event => {
-        const target = button.getAttribute('href');
-
-        if (!target || button.classList.contains('is-sending')) {
-          return;
-        }
-
-        event.preventDefault();
-        button.classList.add('is-sending');
-
-        setTimeout(() => {
-          window.location.href = target;
-        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 1050);
-      });
+      button.addEventListener('click', event => handleButtonClick(button, event));
     });
+
+    window.addEventListener('message', (event) => {
+      if (!event.data || event.data.type !== 'navigate-shell') return;
+      const target = normalizeTarget(event.data.href);
+      if (!shellRoutes.has(target)) return;
+      if (window.WeddingMusic) window.WeddingMusic.save();
+      if (target === '/welcome') {
+        document.body.classList.remove('is-shell-open');
+        pageShell.setAttribute('aria-hidden', 'true');
+        pageShellFrame.removeAttribute('src');
+        clearSendingState();
+        return;
+      }
+      openShell(target);
+    });
+
+    if (window.WeddingMusic) {
+      window.WeddingMusic.start();
+    }
   </script>
 
 </body>

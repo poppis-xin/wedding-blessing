@@ -1,3 +1,6 @@
 node_modules/
 blessings.db
 qrcode.png
+public/assets/
+cloudflared.err.log
+*.log

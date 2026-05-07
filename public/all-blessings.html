@@ -2,23 +2,30 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全部祝福 - XX & XX</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>全部祝福 - 王涛 & 鲁恬恬</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html,
+  body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior: none;
+  }
+
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at 18% 12%, rgba(216, 189, 115, 0.16), transparent 30%),
-      radial-gradient(circle at 84% 16%, rgba(23, 91, 60, 0.42), transparent 34%),
-      radial-gradient(circle at 52% 92%, rgba(216, 189, 115, 0.08), transparent 38%),
-      linear-gradient(135deg, #020806 0%, #082016 38%, #04140f 72%, #010403 100%);
+      radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.42), transparent 30%),
+      radial-gradient(circle at 84% 16%, rgba(224, 169, 175, 0.28), transparent 34%),
+      radial-gradient(circle at 52% 92%, rgba(255, 255, 255, 0.3), transparent 38%),
+      linear-gradient(135deg, #FFF0F0 0%, #FCE3E6 100%);
     font-family: 'Noto Serif SC', serif;
-    color: #fff7df;
+    color: #5C4A4D;
     padding: 20px;
     position: relative;
     isolation: isolate;
@@ -34,9 +41,9 @@
 
   body::before {
     z-index: 0;
-    opacity: 0.28;
+    opacity: 0.36;
     background-image:
-      url("data:image/svg+xml,%3Csvg width='760' height='420' viewBox='0 0 760 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d8bd73' stroke-width='1' stroke-opacity='.42'%3E%3Cpath d='M34 330C146 242 148 88 280 68c102-16 133 78 72 114-52 31-113 4-82-36 30-39 96-24 132 35 47 77 124 115 270 38'/%3E%3Cpath d='M85 108c58 33 92 21 132-18M547 286c61-8 91-38 116-84M185 283c46-14 71-41 83-80'/%3E%3Cpath d='M216 90c-18 3-35-3-50-18M266 205c-23 16-47 20-73 11M664 201c-17-2-31-10-41-25'/%3E%3C/g%3E%3C/svg%3E");
+      url("data:image/svg+xml,%3Csvg width='760' height='420' viewBox='0 0 760 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e0a9af' stroke-width='1' stroke-opacity='.6'%3E%3Cpath d='M34 330C146 242 148 88 280 68c102-16 133 78 72 114-52 31-113 4-82-36 30-39 96-24 132 35 47 77 124 115 270 38'/%3E%3Cpath d='M85 108c58 33 92 21 132-18M547 286c61-8 91-38 116-84M185 283c46-14 71-41 83-80'/%3E%3Cpath d='M216 90c-18 3-35-3-50-18M266 205c-23 16-47 20-73 11M664 201c-17-2-31-10-41-25'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 760px 420px;
     mix-blend-mode: screen;
@@ -45,44 +52,72 @@
   body::after {
     z-index: 1;
     background:
-      radial-gradient(ellipse at center, transparent 0%, transparent 58%, rgba(0, 0, 0, 0.42) 100%),
-      linear-gradient(90deg, rgba(216, 189, 115, 0.08), transparent 18%, transparent 82%, rgba(216, 189, 115, 0.08));
+      radial-gradient(ellipse at center, transparent 0%, transparent 58%, rgba(183, 110, 121, 0.1) 100%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.28), transparent 18%, transparent 82%, rgba(224, 169, 175, 0.18));
   }
 
   .header {
     text-align: center;
     padding: 30px 20px;
-    position: sticky;
-    top: 0;
-    background: rgba(1, 8, 5, 0.78);
-    backdrop-filter: blur(14px) saturate(1.1);
-    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    position: relative;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 100;
-    border-bottom: 1px solid rgba(216,189,115,0.24);
-    box-shadow: 0 18px 42px rgba(0,0,0,0.18);
-    border-radius: 0 0 22px 22px;
   }
 
   .header .title {
+    display: inline-flex;
+    justify-content: center;
+    gap: clamp(3px, 1vw, 8px);
     font-size: clamp(1.5rem, 5vw, 2.5rem);
-    background: -webkit-linear-gradient(left, #fff8df, #d8bd73, #fff2c6) 0 0 no-repeat;
-    -webkit-background-size: 200px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(216, 189, 115, 0.34);
-    background-clip: text;
-    animation: shine 3s infinite;
     letter-spacing: clamp(3px, 1vw, 6px);
     margin-bottom: 10px;
   }
 
-  @keyframes shine {
-    0% { background-position: 0 0; }
-    100% { background-position: 100% 100%; }
+  .header .title span {
+    display: inline-block;
+    color: rgba(183, 110, 121, 0.62);
+    text-shadow: 0 0 0 rgba(197, 131, 134, 0);
+    animation: waveGlow 3.6s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.18s);
+    will-change: color, text-shadow, opacity;
+  }
+
+  @keyframes waveGlow {
+    0%, 72%, 100% {
+      color: rgba(183, 110, 121, 0.62);
+      opacity: 0.72;
+      text-shadow: 0 0 0 rgba(197, 131, 134, 0);
+    }
+
+    24% {
+      color: #B76E79;
+      opacity: 1;
+      text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.72),
+        0 0 22px rgba(197, 131, 134, 0.28);
+    }
+
+    42% {
+      color: #C58386;
+      opacity: 0.92;
+      text-shadow: 0 0 14px rgba(197, 131, 134, 0.22);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header .title span {
+      animation: none;
+      color: #B76E79;
+      opacity: 0.9;
+      text-shadow: 0 0 10px rgba(197, 131, 134, 0.18);
+    }
   }
 
   .header .count {
     font-size: clamp(0.9rem, 2vw, 1rem);
-    color: rgba(248,237,210,0.68);
+    color: #C58386;
     margin-top: 8px;
   }
 
@@ -93,18 +128,19 @@
     min-height: 40px;
     margin-top: 15px;
     padding: 8px 20px;
-    background: rgba(216,189,115,0.12);
-    border: 1px solid rgba(216,189,115,0.34);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #B76E79;
     border-radius: 999px;
-    color: #fff2c6;
+    color: #B76E79;
     font-size: 0.9rem;
     text-decoration: none;
     transition: all 0.3s;
   }
 
   .header .back-btn:hover {
-    background: rgba(216,189,115,0.22);
-    border-color: rgba(255,242,198,0.56);
+    background: rgba(255,255,255,0.72);
+    border-color: #C58386;
+    color: #B76E79;
     transform: translateY(-2px);
   }
 
@@ -121,9 +157,9 @@
   }
 
   .header .write-btn {
-    background: linear-gradient(135deg, rgba(216,189,115,0.28), rgba(10,61,42,0.34));
-    border-color: rgba(255,242,198,0.5);
-    color: #fff8df;
+    background: rgba(255, 255, 255, 0.5);
+    border-color: #B76E79;
+    color: #B76E79;
   }
 
   .container {
@@ -138,19 +174,17 @@
   }
 
   .blessing-card {
-    background:
-      linear-gradient(135deg, rgba(216,189,115,0.12), rgba(3,38,27,0.48)),
-      rgba(255,255,255,0.035);
-    border: 1px solid rgba(216,189,115,0.32);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #FFFFFF;
     border-radius: 16px;
     padding: 20px;
-    backdrop-filter: blur(12px) saturate(1.1);
-    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     animation: fadeIn 0.5s ease-out;
     box-shadow:
-      0 12px 30px rgba(0,0,0,0.22),
-      inset 0 1px 0 rgba(255,255,255,0.1);
+      0 4px 16px rgba(205, 160, 165, 0.2),
+      inset 0 1px 0 rgba(255,255,255,0.48);
   }
 
   @keyframes fadeIn {
@@ -161,15 +195,15 @@
   .blessing-card:hover {
     transform: translateY(-5px);
     box-shadow:
-      0 16px 38px rgba(0,0,0,0.3),
-      0 0 26px rgba(216,189,115,0.14);
-    border-color: rgba(255,242,198,0.52);
+      0 8px 24px rgba(205, 160, 165, 0.26),
+      0 0 26px rgba(255,255,255,0.38);
+    border-color: #FFFFFF;
   }
 
   .blessing-card .message {
     font-size: 1rem;
     line-height: 1.7;
-    color: #fff7df;
+    color: #5C4A4D;
     margin-bottom: 12px;
     word-wrap: break-word;
   }
@@ -179,31 +213,31 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 12px;
-    border-top: 1px solid rgba(216,189,115,0.22);
+    border-top: 1px solid rgba(139, 115, 119, 0.22);
   }
 
   .blessing-card .author {
     font-size: 0.9rem;
-    color: #d8bd73;
+    color: #8B7377;
     font-weight: 500;
   }
 
   .blessing-card .time {
     font-size: 0.8rem;
-    color: rgba(248,237,210,0.52);
+    color: #8B7377;
   }
 
   .loading {
     text-align: center;
     padding: 50px;
-    color: rgba(248,237,210,0.68);
+    color: #8B7377;
     font-size: 1.1rem;
   }
 
   .empty {
     text-align: center;
     padding: 100px 20px;
-    color: rgba(248,237,210,0.68);
+    color: #8B7377;
   }
 
   .empty .icon {
@@ -225,7 +259,12 @@
 <body>
 
 <div class="header">
-  <div class="title">全部祝福</div>
+  <div class="title" aria-label="全部祝福">
+    <span style="--i:0" aria-hidden="true">全</span>
+    <span style="--i:1" aria-hidden="true">部</span>
+    <span style="--i:2" aria-hidden="true">祝</span>
+    <span style="--i:3" aria-hidden="true">福</span>
+  </div>
   <div class="count" id="countText">加载中...</div>
   <div class="nav-actions">
     <a href="/" class="back-btn">← 返回首页</a>
@@ -320,51 +359,7 @@
   }
 
   loadAllBlessings();
-
-  // 背景音乐 - 跨页面同步
-  const bgMusic = document.getElementById('bgMusic');
-
-  function syncMusicState() {
-    const musicState = localStorage.getItem('bgMusicPlaying');
-    const musicTime = parseFloat(localStorage.getItem('bgMusicTime') || '0');
-
-    if (musicState === 'true') {
-      bgMusic.currentTime = musicTime;
-      bgMusic.play().catch(err => console.log('音乐播放需要用户交互:', err));
-    }
-  }
-
-  function startMusic() {
-    bgMusic.play().then(() => {
-      localStorage.setItem('bgMusicPlaying', 'true');
-    }).catch(err => {
-      console.log('音乐播放需要用户交互:', err);
-    });
-  }
-
-  // 定期保存播放进度
-  setInterval(() => {
-    if (!bgMusic.paused) {
-      localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-    }
-  }, 1000);
-
-  // 页面卸载时保存状态
-  window.addEventListener('beforeunload', () => {
-    if (!bgMusic.paused) {
-      localStorage.setItem('bgMusicPlaying', 'true');
-      localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-    }
-  });
-
-  // 尝试恢复音乐状态
-  syncMusicState();
-
-  // 如果音乐未播放，等待用户交互
-  if (localStorage.getItem('bgMusicPlaying') !== 'true') {
-    document.addEventListener('click', startMusic, { once: true });
-    document.addEventListener('touchstart', startMusic, { once: true });
-  }
 </script>
+<script src="/music.js"></script>
 </body>
 </html>

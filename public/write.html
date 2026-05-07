@@ -2,22 +2,29 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>写下你的祝福</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html,
+  body {
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior: none;
+  }
+
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at 18% 12%, rgba(216, 189, 115, 0.16), transparent 30%),
-      radial-gradient(circle at 84% 16%, rgba(23, 91, 60, 0.42), transparent 34%),
-      radial-gradient(circle at 50% 92%, rgba(216, 189, 115, 0.08), transparent 38%),
-      linear-gradient(135deg, #020806 0%, #082016 38%, #04140f 72%, #010403 100%);
+      radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.45), transparent 32%),
+      radial-gradient(circle at 86% 18%, rgba(183, 110, 121, 0.16), transparent 30%),
+      radial-gradient(circle at 50% 92%, rgba(255, 255, 255, 0.34), transparent 42%),
+      linear-gradient(180deg, #FFF5F6 0%, #FDE9EB 100%);
     font-family: 'Noto Serif SC', serif;
-    color: #fff7df;
+    color: #5C4A4D;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,9 +44,9 @@
 
   body::before {
     z-index: 0;
-    opacity: 0.28;
+    opacity: 0.24;
     background-image:
-      url("data:image/svg+xml,%3Csvg width='760' height='420' viewBox='0 0 760 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d8bd73' stroke-width='1' stroke-opacity='.42'%3E%3Cpath d='M34 330C146 242 148 88 280 68c102-16 133 78 72 114-52 31-113 4-82-36 30-39 96-24 132 35 47 77 124 115 270 38'/%3E%3Cpath d='M85 108c58 33 92 21 132-18M547 286c61-8 91-38 116-84M185 283c46-14 71-41 83-80'/%3E%3Cpath d='M216 90c-18 3-35-3-50-18M266 205c-23 16-47 20-73 11M664 201c-17-2-31-10-41-25'/%3E%3C/g%3E%3C/svg%3E");
+      url("data:image/svg+xml,%3Csvg width='760' height='420' viewBox='0 0 760 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e0a9af' stroke-width='1' stroke-opacity='.5'%3E%3Cpath d='M34 330C146 242 148 88 280 68c102-16 133 78 72 114-52 31-113 4-82-36 30-39 96-24 132 35 47 77 124 115 270 38'/%3E%3Cpath d='M85 108c58 33 92 21 132-18M547 286c61-8 91-38 116-84M185 283c46-14 71-41 83-80'/%3E%3Cpath d='M216 90c-18 3-35-3-50-18M266 205c-23 16-47 20-73 11M664 201c-17-2-31-10-41-25'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 760px 420px;
     mix-blend-mode: screen;
@@ -48,8 +55,8 @@
   body::after {
     z-index: 1;
     background:
-      radial-gradient(ellipse at center, transparent 0%, transparent 58%, rgba(0, 0, 0, 0.42) 100%),
-      linear-gradient(90deg, rgba(216, 189, 115, 0.08), transparent 18%, transparent 82%, rgba(216, 189, 115, 0.08));
+      radial-gradient(ellipse at center, transparent 0%, transparent 58%, rgba(183, 110, 121, 0.08) 100%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.28), transparent 18%, transparent 82%, rgba(224, 169, 175, 0.18));
   }
 
   .petal {
@@ -58,8 +65,8 @@
     width: var(--size, 3px);
     height: var(--size, 3px);
     border-radius: 50%;
-    background: radial-gradient(circle, #fff8df 0%, #d8bd73 58%, rgba(216, 189, 115, 0) 72%);
-    box-shadow: 0 0 12px rgba(216, 189, 115, 0.62);
+    background: radial-gradient(circle, #ffffff 0%, #E0A9AF 58%, rgba(224, 169, 175, 0) 72%);
+    box-shadow: 0 0 12px rgba(183, 110, 121, 0.36);
     animation: fall linear infinite;
     pointer-events: none;
     z-index: 2;
@@ -86,46 +93,81 @@
     margin-bottom: 35px;
   }
 
-  .title .icon {
-    width: 54px;
-    height: 54px;
+  .title .loader {
+    width: 68px;
+    height: 46px;
     margin: 0 auto 12px;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 34% 26%, #fff8df 0 12%, transparent 18%),
-      linear-gradient(135deg, rgba(255,242,198,0.96), rgba(216,189,115,0.76));
-    box-shadow: 0 0 24px rgba(216,189,115,0.32);
-    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    filter: drop-shadow(0 0 14px rgba(183, 110, 121, 0.24));
+  }
+
+  .title .star {
+    opacity: 0;
+    fill: #B76E79;
+    flex: 0 0 auto;
+    animation: starLoader 2s infinite alternate;
+  }
+
+  .title .star2 {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    animation-delay: 0.25s;
+  }
+
+  .title .star3 {
+    width: 16px;
+    height: 16px;
+    margin-left: -15px;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes starLoader {
+    0% {
+      opacity: 0;
+      transform: translateY(0) translateX(50px) rotate(0deg);
+    }
+
+    10% {
+      opacity: 0;
+      transform: translateY(0) translateX(50px) rotate(0deg);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(-20px) translateX(0) rotate(360deg);
+    }
   }
 
   .title h1 {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, #fff8df, #d8bd73 52%, #b9974e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #8D5B61;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: currentColor;
     letter-spacing: 4px;
   }
 
   .title .couple {
     font-size: 1.1rem;
-    color: rgba(248, 237, 210, 0.72);
+    color: #8D5B61;
     margin-top: 8px;
     letter-spacing: 3px;
   }
 
   .form-card {
-    background:
-      linear-gradient(135deg, rgba(216,189,115,0.12), rgba(3,38,27,0.46)),
-      rgba(255,255,255,0.035);
-    border: 1px solid rgba(216,189,115,0.34);
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
     padding: 30px 25px;
-    backdrop-filter: blur(16px) saturate(1.12);
-    -webkit-backdrop-filter: blur(16px) saturate(1.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     box-shadow:
-      0 24px 60px rgba(0,0,0,0.34),
-      0 0 28px rgba(216,189,115,0.1),
-      inset 0 1px 0 rgba(255,255,255,0.12);
+      0 14px 42px rgba(205, 160, 165, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.68);
   }
 
   .field { margin-bottom: 22px; }
@@ -133,7 +175,7 @@
   .field label {
     display: block;
     font-size: 0.95rem;
-    color: rgba(248, 237, 210, 0.74);
+    color: #A68B8E;
     margin-bottom: 8px;
     letter-spacing: 2px;
   }
@@ -141,11 +183,12 @@
   .field input,
   .field textarea {
     width: 100%;
-    background: rgba(1, 18, 12, 0.46);
-    border: 1px solid rgba(216,189,115,0.28);
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(141, 91, 97, 0.2);
     border-radius: 14px;
     padding: 14px 18px;
-    color: #fff;
+    color: #5C4A4D;
+    caret-color: #B76E79;
     font-family: 'Noto Serif SC', serif;
     font-size: 1rem;
     outline: none;
@@ -154,14 +197,16 @@
 
   .field input:focus,
   .field textarea:focus {
-    border-color: rgba(255,242,198,0.68);
-    background: rgba(4, 29, 20, 0.64);
-    box-shadow: 0 0 22px rgba(216,189,115,0.16);
+    border-color: #B76E79;
+    background: rgba(255, 255, 255, 0.56);
+    box-shadow:
+      0 0 0 1px rgba(183, 110, 121, 0.12),
+      0 0 20px rgba(183, 110, 121, 0.16);
   }
 
   .field input::placeholder,
   .field textarea::placeholder {
-    color: rgba(248,237,210,0.38);
+    color: #A68B8E;
   }
 
   .field textarea {
@@ -173,33 +218,45 @@
   .char-count {
     text-align: right;
     font-size: 0.8rem;
-    color: rgba(216,189,115,0.58);
+    color: #A68B8E;
     margin-top: 6px;
   }
 
   .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #fff2c6 0%, #d8bd73 48%, #9b7b38 100%);
-    border: none;
+    background: linear-gradient(135deg, #B76E79 0%, #E0A9AF 52%, #D8BD73 100%);
+    border: 1px solid rgba(255, 255, 255, 0.76);
     border-radius: 14px;
-    color: #102419;
+    color: #FFFFFF;
     font-family: 'Noto Serif SC', serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 4px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    box-shadow:
+      0 12px 30px rgba(183, 110, 121, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
     position: relative;
     overflow: hidden;
   }
 
   .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(216,189,115,0.28);
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #C58386 0%, #E8B8BE 52%, #E0C682 100%);
+    box-shadow:
+      0 14px 34px rgba(183, 110, 121, 0.28),
+      0 0 24px rgba(255, 255, 255, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.38);
   }
 
-  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:active {
+    transform: translateY(0);
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #A95F6A 0%, #D99BA3 52%, #CFAA63 100%);
+  }
 
   .submit-btn:disabled {
     opacity: 0.5;
@@ -264,8 +321,7 @@
 
   .success-box .again-btn,
   .success-box .wall-btn,
-  .back-btn,
-  .top-nav a {
+  .page-nav a {
     border-radius: 999px;
     font-family: 'Noto Serif SC', serif;
     text-decoration: none;
@@ -296,48 +352,36 @@
     border-color: rgba(255,242,198,0.56);
   }
 
-  .back-btn {
+  .page-nav {
     position: fixed;
     top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background: rgba(216,189,115,0.12);
-    border: 1px solid rgba(216,189,115,0.32);
-    color: #fff2c6;
-    font-size: 0.9rem;
+    left: 50%;
     z-index: 100;
-  }
-
-  .back-btn:hover {
-    background: rgba(216,189,115,0.22);
-    border-color: rgba(255,242,198,0.56);
-    transform: translateY(-2px);
-  }
-
-  .top-nav {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     display: flex;
     gap: 10px;
-    z-index: 100;
+    transform: translateX(-50%);
   }
 
-  .top-nav a {
+  .page-nav a {
     min-height: 40px;
-    padding: 10px 16px;
+    padding: 10px 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: rgba(216,189,115,0.12);
-    border: 1px solid rgba(216,189,115,0.32);
-    color: #fff2c6;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(141, 91, 97, 0.28);
+    border-radius: 999px;
+    color: #8D5B61;
     font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(205, 160, 165, 0.14);
   }
 
-  .top-nav a:hover {
-    background: rgba(216,189,115,0.22);
-    border-color: rgba(255,242,198,0.56);
+  .page-nav a:hover {
+    background: rgba(255, 255, 255, 0.64);
+    border-color: rgba(141, 91, 97, 0.42);
+    color: #8D5B61;
     transform: translateY(-2px);
   }
 
@@ -364,25 +408,22 @@
   @media (max-width: 520px) {
     body {
       justify-content: flex-start;
-      padding-top: 84px;
+      padding-top: calc(96px + env(safe-area-inset-top));
       padding-bottom: 28px;
     }
 
-    .back-btn {
-      top: 12px;
-      left: 12px;
-      padding: 9px 14px;
-    }
-
-    .top-nav {
-      top: 12px;
-      right: 12px;
+    .page-nav {
+      top: calc(18px + env(safe-area-inset-top));
+      width: calc(100% - 24px);
+      justify-content: center;
       gap: 8px;
     }
 
-    .top-nav a {
+    .page-nav a {
+      flex: 1 1 0;
+      max-width: 150px;
       min-height: 38px;
-      padding: 9px 12px;
+      padding: 9px 10px;
       font-size: 0.82rem;
     }
   }
@@ -390,8 +431,8 @@
 </head>
 <body>
 
-<a href="/" class="back-btn">← 返回首页</a>
-<nav class="top-nav" aria-label="页面导航">
+<nav class="page-nav" aria-label="页面导航">
+  <a href="/">← 返回首页</a>
   <a href="/all-blessings">查看全部</a>
 </nav>
 
@@ -402,9 +443,19 @@
 
 <div class="container">
   <div class="title">
-    <div class="icon" aria-hidden="true"></div>
+    <div class="loader" aria-hidden="true">
+      <svg viewBox="0 0 256 256" class="star star1" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+      </svg>
+      <svg viewBox="0 0 256 256" class="star star2" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+      </svg>
+      <svg viewBox="0 0 256 256" class="star star3" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+      </svg>
+    </div>
     <h1>写下你的祝福</h1>
-    <div class="couple">XX & XX</div>
+    <div class="couple">王涛 & 鲁恬恬</div>
   </div>
 
   <div class="form-card">
@@ -415,8 +466,8 @@
 
     <div class="field">
       <label>祝福语</label>
-      <textarea id="msgInput" placeholder="写下你对新人的美好祝愿..." maxlength="200"></textarea>
-      <div class="char-count"><span id="charCount">0</span>/200</div>
+      <textarea id="msgInput" placeholder="写下你对新人的美好祝愿..." maxlength="52"></textarea>
+      <div class="char-count"><span id="charCount">0</span>/52</div>
     </div>
 
     <button class="submit-btn" id="submitBtn" onclick="submitBlessing()">
@@ -526,51 +577,7 @@
       submitBlessing();
     }
   });
-
-  // 背景音乐 - 跨页面同步
-  const bgMusic = document.getElementById('bgMusic');
-
-  function syncMusicState() {
-    const musicState = localStorage.getItem('bgMusicPlaying');
-    const musicTime = parseFloat(localStorage.getItem('bgMusicTime') || '0');
-
-    if (musicState === 'true') {
-      bgMusic.currentTime = musicTime;
-      bgMusic.play().catch(err => console.log('音乐播放需要用户交互:', err));
-    }
-  }
-
-  function startMusic() {
-    bgMusic.play().then(() => {
-      localStorage.setItem('bgMusicPlaying', 'true');
-    }).catch(err => {
-      console.log('音乐播放需要用户交互:', err);
-    });
-  }
-
-  // 定期保存播放进度
-  setInterval(() => {
-    if (!bgMusic.paused) {
-      localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-    }
-  }, 1000);
-
-  // 页面卸载时保存状态
-  window.addEventListener('beforeunload', () => {
-    if (!bgMusic.paused) {
-      localStorage.setItem('bgMusicPlaying', 'true');
-      localStorage.setItem('bgMusicTime', bgMusic.currentTime.toString());
-    }
-  });
-
-  // 尝试恢复音乐状态
-  syncMusicState();
-
-  // 如果音乐未播放，等待用户交互
-  if (localStorage.getItem('bgMusicPlaying') !== 'true') {
-    document.addEventListener('click', startMusic, { once: true });
-    document.addEventListener('touchstart', startMusic, { once: true });
-  }
 </script>
+<script src="/music.js"></script>
 </body>
 </html>
